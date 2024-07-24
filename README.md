@@ -26,6 +26,12 @@ app/
 
 </pre>
 
+## Executar o servidor
+~~~bash
+php -S localhost:8080 -t public
+~~~
+
+
 ## [Playlist - conteúdo ](https://www.youtube.com/playlist?list=PLyugqHiq-SKdK8YjyV7x51IWZxpk9wVQN)
   
 Link do vídeo                                      | tempo
