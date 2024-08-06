@@ -2,7 +2,7 @@
 
 namespace app\routes;
 
-class Routes
+class Router
 {
     public static function get()
     {
