@@ -2,7 +2,7 @@
 
 namespace app\core;
 
-use app\routes\Router;
+use app\routes\Routes;
 use app\support\RequestType;
 use app\support\Uri;
 
@@ -16,7 +16,7 @@ class RoutersFilter
     {
         $this->uri = Uri::get();
         $this->method = RequestType::get();
-        $this->routesRegistered = Router::get();
+        $this->routesRegistered = Routes::get();
     }
 
     private function simpleRouter()
@@ -25,15 +25,38 @@ class RoutersFilter
             return $this->routesRegistered[$this->method][$this->uri];
         }
 
-        return 'NotFoundController@index';
+        return null;
     }
 
     public function dynamicRouter()
     {
+        foreach ($this->routesRegistered[$this->method] as $index => $route) {
+            $regex = str_replace('/', '\/', ltrim($index, '/'));
+            if ($index !== '/' && preg_match("/^$regex$/", trim($this->uri, '/'))) {
+                $routesRegisteredFound = $route;
+                break;
+            } else {
+                $routesRegisteredFound = null;
+            }
+        }
+
+        return $routesRegisteredFound;
     }
 
     public function get()
     {
-        return $this->simpleRouter();
+        $router = $this->simpleRouter();
+
+        if ($router) {
+            return $router;
+        }
+
+        $router = $this->dynamicRouter();
+
+        if ($router) {
+            return $router;
+        }
+
+        return 'NotFoundController@index';
     }
 }
