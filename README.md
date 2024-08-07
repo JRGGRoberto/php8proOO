@@ -20,9 +20,9 @@ app/
   ├── traits/
   ├── views/
   public/
-  │   ├── css
-  │   ├── js
-  │   └── index.php
+      ├── index.php
+      ├── js/
+      └── css/
 
 </pre>
 
