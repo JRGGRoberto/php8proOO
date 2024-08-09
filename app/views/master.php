@@ -14,5 +14,7 @@
         <?php echo $this->section('content'); ?>
 
     </div>
+
+    <?php echo $this->section('js'); ?>
 </body>
 </html>

@@ -6,3 +6,10 @@
 
 <h1>User</h1>
 <p>Hello, <?php echo $this->e($name); ?></p>
+
+
+<?php $this->start('js'); ?>
+  <script>
+    alert('Hey');
+  </script>
+<?php $this->stop(); ?>
