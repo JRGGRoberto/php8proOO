@@ -11,9 +11,13 @@ class UserController extends Controller
         $this->view(
             'user',
             [
-                'name' => 'Roberto',
-                'title' => 'Página do user',
+                'title' => 'Editar user',
             ]
         );
+    }
+
+    public function update($params)
+    {
+        dd($params);
     }
 }
