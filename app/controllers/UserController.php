@@ -2,8 +2,6 @@
 
 namespace app\controllers;
 
-// use app\controllers\Controller;
-
 class UserController extends Controller
 {
     public function edit($params)
@@ -18,6 +16,7 @@ class UserController extends Controller
 
     public function update($params)
     {
-        dd($params);
+        
+        dd('update');
     }
 }

@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use Exception;
 use League\Plates\Engine;
 
 abstract class Controller

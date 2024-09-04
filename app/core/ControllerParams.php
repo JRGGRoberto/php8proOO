@@ -24,6 +24,7 @@ class ControllerParams
         return $params;
     }
 
+    
     public function get(string $router)
     {
         $routes = Routes::get();

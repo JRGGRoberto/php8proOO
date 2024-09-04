@@ -6,7 +6,7 @@
 
 <h1>User</h1>
 <!-- <p>Hello, <?php echo $this->e($name); ?></p> -->
- <form action="/user/update/7" method="post">
+ <form action="/user/update" method="post">
     <input type="text" name="fistName" value="Roberto">
     <input type="text" name="lastName" value="Gomes">
     <input type="email" name="email" value="jrggroberto@gmail.com">

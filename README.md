@@ -73,3 +73,28 @@ Link do vídeo                                      | tempo
 [#34 - Como enviar emails - parte 3](https://www.youtube.com/watch?v=BFyEVqqaX9c&list=PLyugqHiq-SKdK8YjyV7x51IWZxpk9wVQN&index=35&pp=iAQB) | 13:55
 [PHP Profissional Orientado a Objetos - Resolvendo bug do sql injection](https://www.youtube.com/watch?v=O4reeB1WkcM&list=PLyugqHiq-SKdK8YjyV7x51IWZxpk9wVQN&index=36&pp=iAQB) | 22:58
 
+
+Parte da configuração do arquivo nginx.conf
+docker\docker\nginx
+```
+server {
+    listen 80;
+    server_name rotas.localhost;
+
+    root /var/www/html/php8/php8pro2o/public;
+    index index.html index.php;
+
+    location / {
+	    try_files $uri $uri/ /index.php?$query_string;
+    }
+
+
+    location ~ \.php$ {
+        include fastcgi_params;
+        fastcgi_pass php8_ctn:9000;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_param QUERY_STRING $query_string;
+    }
+}
+
+``` 
