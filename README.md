@@ -3,9 +3,22 @@
 ## PHP 8 - Sistemas de rotas OO
 
 
+<img src="https://img.shields.io/github/languages/count/JRGGRoberto/php8proOO"><br>
+<img src="https://img.shields.io/github/repo-size/JRGGRoberto/php8proOO"><br>
+<img src="https://img.shields.io/github/last-commit/JRGGRoberto/php8proOO"><br>
+<img src="https://img.shields.io/github/issues/JRGGRoberto/php8proOO"><br>
+
+> [!IMPORTANT]
+> After making the clone, run:<br>
+> ```composer update ```<br>
+> To install the dependency libraries
+
+
 
 > [!NOTE]
 > O arquivo phpproj.bat é um batch que monta todos as pastas, sendo necessário apenas para criar projetos novos criando as pastas do padrão do projeto.
+
+
 
 ## Estrutura inicial de projeto
 <pre>
