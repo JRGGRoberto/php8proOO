@@ -2,7 +2,8 @@
 
 namespace app\controllers;
 
-use app\support\RequestType;
+use app\controllers\Controller;
+use app\core\Request;
 
 class UserController extends Controller
 {
@@ -20,7 +21,9 @@ class UserController extends Controller
 
     public function update($params)
     {
-        Resquest::all();
-        dd($params);
+        //dd(Request::all());
+
+        dd(Request::input('fistName'));
+        
     }
 }
