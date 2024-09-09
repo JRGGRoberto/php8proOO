@@ -2,8 +2,11 @@
 
 namespace app\controllers;
 
+use app\support\RequestType;
+
 class UserController extends Controller
 {
+
     public function edit($params)
     {
         $this->view(
@@ -14,9 +17,10 @@ class UserController extends Controller
         );
     }
 
+
     public function update($params)
     {
-        
-        dd('update');
+        Resquest::all();
+        dd($params);
     }
 }
