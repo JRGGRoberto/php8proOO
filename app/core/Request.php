@@ -22,4 +22,18 @@ class Request
 
     }
 
+    public static function only(string|array $only)
+    {
+        $fieldPost = self::all();
+        $fieldPostkeys = array_keys($fieldPost);
+        
+        foreach($fieldPostkeys as $index => $value){
+            if($value !== (is_string($only) ? $only : (isset($only[$index]) ? $only[$index] : null ) )){
+                unset($fieldPost[$value]);
+            } 
+        }
+
+        return $fieldPost;
+    }
+
 }

@@ -21,9 +21,10 @@ class UserController extends Controller
 
     public function update($params)
     {
+        $response = Request::only(['fistName', 'lastName']);
+        dd($response);
         //dd(Request::all());
-
-        dd(Request::input('fistName'));
+        //dd(Request::input('fistName'));
         
     }
 }
