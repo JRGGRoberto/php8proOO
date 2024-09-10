@@ -27,13 +27,17 @@ class Request
         $fieldPost = self::all();
         $fieldPostkeys = array_keys($fieldPost);
         
+
+        $arr = [];
+
         foreach($fieldPostkeys as $index => $value){
-            if($value !== (is_string($only) ? $only : (isset($only[$index]) ? $only[$index] : null ) )){
-                unset($fieldPost[$value]);
+            $onlField = (is_string($only) ? $only : (isset($only[$index]) ? $only[$index] : null ));
+            if(isset($fieldPost[$onlField])){
+                $arr[$onlField] = $fieldPost[$onlField];
             } 
         }
 
-        return $fieldPost;
+        return $arr;
     }
 
 
